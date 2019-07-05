@@ -6,9 +6,11 @@
 /*   By: smaddox <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/04 16:24:56 by smaddox           #+#    #+#             */
-/*   Updated: 2019/07/04 16:25:01 by smaddox          ###   ########.fr       */
+/*   Updated: 2019/07/04 17:08:29 by smaddox          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#ifndef TRASH_CAN_H
+#	define TRASH_CAN_H
 
 #include "trashcan.h"
 
