@@ -6,7 +6,7 @@
 /*   By: smaddox <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/04 16:24:56 by smaddox           #+#    #+#             */
-/*   Updated: 2019/07/04 17:08:29 by smaddox          ###   ########.fr       */
+/*   Updated: 2019/08/08 12:25:24 by smaddox          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 t_rash_can g_can = {.top = -1};
 
-void mom(void *pointer)
+void	mom(void *pointer)
 {
 	if (!trash_overflow())
 	{
@@ -24,23 +24,23 @@ void mom(void *pointer)
 	}
 }
 
-int trash_overflow(void)
+int		trash_overflow(void)
 {
-	if(g_can.top == DEFAULT_SIZE - 1)
-		return(1);
-	return(0);
+	if (g_can.top == DEFAULT_SIZE - 1)
+		return (1);
+	return (0);
 }
 
-int trashcan_empty(void)
+int		trashcan_empty(void)
 {
 	if (g_can.top == -1)
-		return(1);
-	return(0);
+		return (1);
+	return (0);
 }
 
-void garbage_day(void)
+void	garbage_day(void)
 {
-	while(!trashcan_empty())
+	while (!trashcan_empty())
 	{
 		free(g_can.can[g_can.top]);
 		g_can.top--;
