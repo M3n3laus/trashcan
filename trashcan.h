@@ -10,37 +10,25 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef TRASH_CAN_H
+# define TRASH_CAN_H
+
 #include <stdarg.h>
 #include <stdlib.h>
 
-#define DEFAULT_SIZE 50
-typedef enum
-{
-	T_CHAR,
-	T_INT,
-	T_FLOAT
-}					e_my_type;
+#define DEFAULT_SIZE 200
 
-typedef struct 		s_trash
+typedef struct				s_trashcan
 {
-	e_my_type			type;
-	union 
-	{
-		char		*cp;
-		int			*ip;
-		float		*fp;
-	}				u_piece;
-}					t_rash;
-
-typedef struct		s_trashcan
-{
-	t_rash			can[DEFAULT_SIZE];
+	void				*can[DEFAULT_SIZE];
 	int				top;
 }					t_rash_can;
 
-void				new_trash_bag(t_rash_can *my_trashcan);
-void				mom(t_rash_can *my_trashcan, e_my_type tp, ...);
-int					trash_overflow(t_rash_can *my_trashcan);
-int					trashcan_empty(t_rash_can *my_trashcan);
-void				garbage_day(t_rash_can *my_trashcan);
+void					mom(void *pointer);
+int					trash_overflow(void);
+int					trashcan_empty(void);
+void					garbage_day(void);
 
+extern t_rash_can g_can;
+
+#endif
